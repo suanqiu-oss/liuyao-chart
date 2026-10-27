@@ -1,0 +1,268 @@
+{
+ "$defs": {
+  "LiuyaoHexagram": {
+   "properties": {
+    "bits": {
+     "title": "Bits",
+     "type": "string"
+    },
+    "name": {
+     "title": "Name",
+     "type": "string"
+    },
+    "upper_trigram": {
+     "title": "Upper Trigram",
+     "type": "string"
+    },
+    "lower_trigram": {
+     "title": "Lower Trigram",
+     "type": "string"
+    },
+    "lines": {
+     "items": {
+      "$ref": "#/$defs/LiuyaoLine"
+     },
+     "title": "Lines",
+     "type": "array"
+    }
+   },
+   "required": [
+    "bits",
+    "name",
+    "upper_trigram",
+    "lower_trigram",
+    "lines"
+   ],
+   "title": "LiuyaoHexagram",
+   "type": "object"
+  },
+  "LiuyaoLine": {
+   "properties": {
+    "position": {
+     "title": "Position",
+     "type": "integer"
+    },
+    "value": {
+     "title": "Value",
+     "type": "integer"
+    },
+    "yin_yang": {
+     "enum": [
+      "yin",
+      "yang"
+     ],
+     "title": "Yin Yang",
+     "type": "string"
+    },
+    "changing": {
+     "title": "Changing",
+     "type": "boolean"
+    },
+    "changing_label": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Changing Label"
+    },
+    "najia": {
+     "title": "Najia",
+     "type": "string"
+    },
+    "heavenly_stem": {
+     "title": "Heavenly Stem",
+     "type": "string"
+    },
+    "earthly_branch": {
+     "title": "Earthly Branch",
+     "type": "string"
+    },
+    "element": {
+     "title": "Element",
+     "type": "string"
+    },
+    "relative": {
+     "title": "Relative",
+     "type": "string"
+    },
+    "spirit": {
+     "title": "Spirit",
+     "type": "string"
+    },
+    "shi_ying": {
+     "anyOf": [
+      {
+       "enum": [
+        "世",
+        "应"
+       ],
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Shi Ying"
+    },
+    "hidden_spirit": {
+     "anyOf": [
+      {
+       "additionalProperties": true,
+       "type": "object"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Hidden Spirit"
+    }
+   },
+   "required": [
+    "position",
+    "value",
+    "yin_yang",
+    "changing",
+    "najia",
+    "heavenly_stem",
+    "earthly_branch",
+    "element",
+    "relative",
+    "spirit"
+   ],
+   "title": "LiuyaoLine",
+   "type": "object"
+  }
+ },
+ "properties": {
+  "schema_version": {
+   "default": "liuyao_chart.v1",
+   "title": "Schema Version",
+   "type": "string"
+  },
+  "cast_time": {
+   "anyOf": [
+    {
+     "format": "date-time",
+     "type": "string"
+    },
+    {
+     "type": "null"
+    }
+   ],
+   "default": null,
+   "title": "Cast Time"
+  },
+  "timezone": {
+   "anyOf": [
+    {
+     "type": "string"
+    },
+    {
+     "type": "null"
+    }
+   ],
+   "default": null,
+   "title": "Timezone"
+  },
+  "four_pillars": {
+   "additionalProperties": {
+    "type": "string"
+   },
+   "title": "Four Pillars",
+   "type": "object"
+  },
+  "month_branch": {
+   "title": "Month Branch",
+   "type": "string"
+  },
+  "day_pillar": {
+   "title": "Day Pillar",
+   "type": "string"
+  },
+  "xunkong": {
+   "items": {
+    "type": "string"
+   },
+   "title": "Xunkong",
+   "type": "array"
+  },
+  "palace": {
+   "additionalProperties": {
+    "anyOf": [
+     {
+      "type": "string"
+     },
+     {
+      "type": "integer"
+     }
+    ]
+   },
+   "title": "Palace",
+   "type": "object"
+  },
+  "primary": {
+   "$ref": "#/$defs/LiuyaoHexagram"
+  },
+  "changed": {
+   "anyOf": [
+    {
+     "$ref": "#/$defs/LiuyaoHexagram"
+    },
+    {
+     "type": "null"
+    }
+   ],
+   "default": null
+  },
+  "lines": {
+   "items": {
+    "$ref": "#/$defs/LiuyaoLine"
+   },
+   "title": "Lines",
+   "type": "array"
+  },
+  "moving_lines": {
+   "items": {
+    "type": "integer"
+   },
+   "title": "Moving Lines",
+   "type": "array"
+  },
+  "engine": {
+   "additionalProperties": {
+    "type": "string"
+   },
+   "title": "Engine",
+   "type": "object"
+  },
+  "warnings": {
+   "items": {
+    "type": "string"
+   },
+   "title": "Warnings",
+   "type": "array"
+  }
+ },
+ "required": [
+  "four_pillars",
+  "month_branch",
+  "day_pillar",
+  "xunkong",
+  "palace",
+  "primary",
+  "lines",
+  "moving_lines",
+  "engine"
+ ],
+ "title": "liuyao_chart.v1",
+ "type": "object",
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://raw.githubusercontent.com/auwc/liuyao-chart/main/src/liuyao_chart/schema/liuyao_chart.v1.json"
+}

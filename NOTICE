@@ -1,0 +1,16 @@
+# Notices for liuyao-chart
+
+This project adapts the deterministic Najia (纳甲), palace (八宫), Shi/Ying
+(世应), six-spirit (六神) and hidden-spirit (伏神) rules published by
+[`yaomancy/liuyao-engine`](https://github.com/yaomancy/liuyao-engine),
+version 0.1.0.
+
+Copyright © the liuyao-engine contributors. Licensed under the Apache License,
+Version 2.0.
+
+The upstream package is used as the rule reference rather than as a runtime
+dependency: its pinned `sxtwl` source distribution cannot currently be built
+on Windows, so this package is pure Python and uses `lunar-python` as its
+calendar backend behind the same `liuyao_chart.v1` output contract.
+
+Apache License, Version 2.0: see LICENSE.
