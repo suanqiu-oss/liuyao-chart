@@ -1,5 +1,10 @@
 # liuyao-chart
 
+[![PyPI](https://img.shields.io/pypi/v/liuyao-chart)](https://pypi.org/project/liuyao-chart/)
+[![Python](https://img.shields.io/pypi/pyversions/liuyao-chart)](https://pypi.org/project/liuyao-chart/)
+[![CI](https://github.com/suanqiu-oss/liuyao-chart/actions/workflows/ci.yml/badge.svg)](https://github.com/suanqiu-oss/liuyao-chart/actions/workflows/ci.yml)
+[![License](https://img.shields.io/pypi/l/liuyao-chart)](https://github.com/suanqiu-oss/liuyao-chart/blob/main/LICENSE)
+
 确定性六爻排盘库：输入六次起卦爻值（初爻到上爻，6/7/8/9）和起卦时刻，输出装卦、
 纳甲、六亲、六神、世应、伏神与变卦的带版本号 JSON（`liuyao_chart.v1`）。
 
